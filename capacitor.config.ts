@@ -1,9 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.gabrielapuerta.dev',
   appName: 'miAplicacion',
-  webDir: 'www',
+  webDir: 'www/miAplicacion',
   server: {
     androidScheme: 'https'
   }
