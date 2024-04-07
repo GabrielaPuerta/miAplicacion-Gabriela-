@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
 import { HeroesBDService } from 'src/app/services/heroes-bd.service';
-import { HeroesServiceService } from 'src/app/services/heroes-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -11,39 +10,35 @@ import { HeroesServiceService } from 'src/app/services/heroes-service.service';
 export class Tab1Page {
 
   unosHeroes: Heroe[] = [];
-  unTipo:string ='lista';
+  unTipo:string = 'detalle';
 
-  //Nuevos datos BD
+  //Nuevos Datos desde la BD
   misDatosHeroesBD: HeroeBD[] = [];
 
-  constructor(//private data:HeroesServiceService,
-    //Inyecto nuevo servicio para una BD
-    private databd:HeroesBDService){
+  constructor(
+              //private data:HeroesServiceService,
+
+              //Inyecto el nuevo servicio para una BD
+              private databd:HeroesBDService
+              ) {
 
     //this.unosHeroes = data.getHeroes();
-
     console.log("DATOS",this.unosHeroes);
 
     this.getHeroesBD();
+
   }
 
-  async getHeroesBD(){
+  async getHeroesBD() {
     await this.databd
-    .getHeroes()
-    .toPromise()
-    .then((data: any) => {
-      this.misDatosHeroesBD = data.resp;
-      console.log(this.misDatosHeroesBD);
-    });
+      .getHeroes()
+      .toPromise()
+      .then((data: any) => {
+        this.misDatosHeroesBD = data.resp;
+        console.log(this.misDatosHeroesBD);
+      });
   }
 
-  cambiarEvento(event:any){
-    const botonActivado = event.detail.checked;
-    if (botonActivado){
-      this.unTipo = 'detalle';
-    }
-    else{
-      this.unTipo = 'lista';
-  }
-}
+
+
 }

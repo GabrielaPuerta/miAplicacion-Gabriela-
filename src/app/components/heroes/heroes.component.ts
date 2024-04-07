@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FotoHeroe } from 'src/app/interfaces/fotosHeroe.interface';
-import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
+import { HeroeBD } from 'src/app/interfaces/heroes.interface';
 
 @Component({
   selector: 'app-heroes',
@@ -10,22 +9,15 @@ import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
 })
 export class HeroesComponent  implements OnInit {
 
-  @Input () unosHeroes: HeroeBD [] = [];
-  
-  @Input () tipo!: string;
+  @Input() unosHeroes: HeroeBD[] = [];
+  //@Input() tipo!: string;
 
-unHeroe: any;
-
-  constructor(private router:Router) { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {}
 
-  navegarHeroe(unId:any){
-    this.router.navigate(['/det-heroe', unId])
-  }
-
-  mostrarFotos(unId:any){
-    this.router.navigate(['/fotos-heroe', unId])
-  }
+ 
 
 }

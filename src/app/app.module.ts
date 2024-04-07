@@ -4,16 +4,17 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, 
-    IonicModule.forRoot(), 
-    //Adicionamos eso para poder utilizar la API
-    HttpClientModule, 
+  imports: [BrowserModule, IonicModule.forRoot(),
+
+    //Adicionar el HttpClientModule
+    HttpClientModule,
+
     AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

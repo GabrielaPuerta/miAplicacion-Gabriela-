@@ -11,8 +11,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/det-heroe/det-heroe.module').then( m => m.DetHeroePageModule)
   },
   {
-    path: 'fotos-heroe/:id',
-    loadChildren: () => import('./pages/fotos-heroe/fotos-heroe.module').then( m => m.FotosHeroePageModule)
+    path: 'det-fotos/:id',
+    loadChildren: () => import('./pages/det-fotos/det-fotos.module').then( m => m.DetFotosPageModule)
+  },
+  {
+    path: 'det-heroe1/:idheroe',
+    loadChildren: () => import('./pages/det-heroe1/det-heroe1.module').then( m => m.DetHeroe1PageModule)
   }
 ];
 @NgModule({

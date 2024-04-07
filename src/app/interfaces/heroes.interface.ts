@@ -16,4 +16,3 @@ export interface Heroe{
     id?: number;
     _id?: string;
   };
-  

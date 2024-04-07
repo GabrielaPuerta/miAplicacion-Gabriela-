@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+
 import { Heroe } from '../interfaces/heroes.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroesServiceService {
-
   heroes: Heroe[] = [
     {
       nombre: 'Aquaman',
@@ -13,7 +13,7 @@ export class HeroesServiceService {
       img: 'assets/img/aquaman.png',
       aparicion: '1941-11-01',
       casa: 'DC',
-      id:1
+      id: 1
     },
     {
       nombre: 'Batman',
@@ -21,7 +21,7 @@ export class HeroesServiceService {
       img: 'assets/img/batman.png',
       aparicion: '1939-05-01',
       casa: 'DC',
-      id:2
+      id: 2
     },
     {
       nombre: 'Daredevil',
@@ -29,7 +29,7 @@ export class HeroesServiceService {
       img: 'assets/img/daredevil.png',
       aparicion: '1964-01-01',
       casa: 'Marvel',
-      id:3
+      id: 3
     },
     {
       nombre: 'Hulk',
@@ -37,7 +37,7 @@ export class HeroesServiceService {
       img: 'assets/img/hulk.png',
       aparicion: '1962-05-01',
       casa: 'Marvel',
-      id:4
+      id: 4
     },
     {
       nombre: 'Linterna Verde',
@@ -45,7 +45,7 @@ export class HeroesServiceService {
       img: 'assets/img/linterna-verde.png',
       aparicion: '1940-06-01',
       casa: 'DC',
-      id:5
+      id: 5
     },
     {
       nombre: 'Spider-Man',
@@ -53,7 +53,7 @@ export class HeroesServiceService {
       img: 'assets/img/spiderman.png',
       aparicion: '1962-08-01',
       casa: 'Marvel',
-      id:6
+      id: 6
     },
     {
       nombre: 'Wolverine',
@@ -61,26 +61,22 @@ export class HeroesServiceService {
       img: 'assets/img/wolverine.png',
       aparicion: '1974-11-01',
       casa: 'Marvel',
-      id:7
+      id: 7
     },
   ];
 
 
-
   constructor() { }
 
-  //Metodo que me trae todos los heroes
   getHeroes():Heroe[]{
     return this.heroes;
+
   }
 
-  //Metodo que me trae un Heroe
   getUnHeroe(idHeroe:number){
     return this.heroes[idHeroe - 1 ];
   }
 
-  
-  //Metodo que me busca los heroes de acuerdo a un termino
   getHeroesComo(termino:string):Heroe[]{
 
     let busquedaHeroes: Heroe[] = [];
@@ -96,7 +92,11 @@ export class HeroesServiceService {
       }
 
     }
+
     return busquedaHeroes;
+
   }
+ 
+
+
 }
-  

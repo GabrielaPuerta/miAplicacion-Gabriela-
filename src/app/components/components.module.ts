@@ -1,26 +1,32 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { HeroeComponent } from './heroe/heroe.component';
+//s
+import { HeaderComponent } from './header/header.component';
+import { HeroesTarjetaComponent } from './heroes-tarjeta/heroes-tarjeta.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { FotosComponent } from './fotos/fotos.component';
 
 
 
 @NgModule({
   declarations: [
-    HeroeComponent,
     HeroesComponent,
-    FotosComponent
+    HeroeComponent,
+    HeroesTarjetaComponent,
+    HeaderComponent
   ],
   exports: [
-    HeroeComponent,
     HeroesComponent,
-    FotosComponent
+    HeroeComponent,
+    HeroesTarjetaComponent,
+    HeaderComponent
+
   ],
   imports: [
     CommonModule,
     IonicModule
+
   ]
 })
 export class ComponentsModule { }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
+import { HeroeBD } from 'src/app/interfaces/heroes.interface';
 
 @Component({
   selector: 'app-heroe',
@@ -8,14 +8,19 @@ import { Heroe, HeroeBD } from 'src/app/interfaces/heroes.interface';
   styleUrls: ['./heroe.component.scss'],
 })
 export class HeroeComponent  implements OnInit {
+ 
   @Input() unHeroe!: HeroeBD;
 
-  constructor(private router:Router) { }
-
-  mostrarFotos(unId:any){
-    this.router.navigate(['/fotos-heroe', unId])
-  }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+  navegarHeroe(unId:any){
+    this.router.navigate(['/det-heroe1',unId])
+  }  
+
+  navegarFotosHeroe(unId:any){
+    this.router.navigate(['/det-fotos',unId])
+  }  
 
 }
